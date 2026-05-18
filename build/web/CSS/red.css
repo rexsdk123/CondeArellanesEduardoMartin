@@ -1,0 +1,11 @@
+.red {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #e6f7ff, #b3e0ff);
+    font-family: Arial;
+    font-size: 20px;
+    color: #0066cc;
+}

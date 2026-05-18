@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e6f7ff, #b3e0ff);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.contacto1 {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 120, 215, 0.1);
+    border: 1px solid #b3e0ff;
+}
+
+.contacto1 h2 {
+    margin-bottom: 20px;
+    color: #0066cc;
+    font-size: 28px;
+}
+
+.contacto2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+    padding: 8px;
+}
+
+.contacto2 strong {
+    color: #0066cc;
+    margin-right: 10px;
+}
+
+a {
+    color: #0078d7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #004d99;
+    text-decoration: underline;
+}

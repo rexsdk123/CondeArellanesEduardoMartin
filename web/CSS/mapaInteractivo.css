@@ -1,0 +1,43 @@
+.zona-entrega {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.zona-card {
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.zona-card h2 {
+    margin-bottom: 10px;
+}
+
+.zona-card p {
+    line-height: 1.6;
+}
+
+.resaltado {
+    font-weight: bold;
+}
+
+
+.mapa-frame {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+.nota {
+    font-size: 0.9em;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+

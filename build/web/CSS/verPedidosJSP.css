@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e6f7ff, #b3e0ff);
+    color: #666;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #0066cc;
+    margin-bottom: 25px;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 15px rgba(0, 120, 215, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #b3e0ff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #b3e0ff;
+}
+
+th {
+    background: linear-gradient(135deg, #4da6ff, #0078d7);
+    color: white;
+}
+
+tr:hover {
+    background: #f0f9ff;
+}
+
+.enviar {
+    padding: 8px 15px;
+    background: linear-gradient(135deg, #4da6ff, #0078d7);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.enviar:hover {
+    background: linear-gradient(135deg, #0078d7, #0066cc);
+}
+
+form {
+    margin: 0;
+}
+
+.link {
+    margin-left: 10px;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    color: #0078d7;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: #004d99;
+}

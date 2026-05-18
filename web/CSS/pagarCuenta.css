@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background: rgba(179, 224, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+div {
+    background: #f2f2f2;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #0066cc;
+}
+
+h2 {
+    text-align: center;
+    color: #0066cc;
+}
+
+.texto {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+.enviar {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #4da6ff, #0078d7);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.enviar:hover {
+    background: linear-gradient(135deg, #0078d7, #0066cc);
+}
+
+.regresar {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background: linear-gradient(135deg, #4da6ff, #0078d7);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.regresar:hover {
+    background: linear-gradient(135deg, #0078d7, #0066cc);
+}
+
+* {
+    box-sizing: border-box;
+}

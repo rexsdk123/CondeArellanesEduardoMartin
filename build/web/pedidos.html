@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>MERCURY: Registrar pedido</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/pedidos.css">
+        <script>
+            function actualizarProductos() {
+                var mat1 = ["Brincolin chico", "Brincolin mediano", "Brincolin grande", "Brincolin jumbo"];
+                var mat2 = ["Inflable minion", "Inflable spiderman", "Inflable mario bros", "Inflable batman", "Inflable castillo"];
+                var mat3 = ["Futbolito grande cafe oscuro", "Futbolito grande cafe", "Futbolito chico"];
+                var mat4 = ["Rockola"];
+                var alcaldiaSelect = document.getElementById("menude1");
+                var coloniaSelect = document.getElementById("menude2");
+                coloniaSelect.options.length = 1;
+                var index = alcaldiaSelect.selectedIndex;
+                if (index === 0) {
+                    alert("Ingrese un producto");
+                    return;
+                }
+
+                var colonias = [];
+                if (index === 1)
+                    colonias = mat1;
+                else
+                if (index === 2)
+                    colonias = mat2;
+                else
+                if (index === 3)
+                    colonias = mat3;
+                else
+                if (index === 4)
+                    colonias = mat4;
+                for (var i = 0; i < colonias.length; i++) {
+                    var opt = new Option(colonias[i], colonias[i]);
+                    coloniaSelect.options.add(opt);
+                }
+
+
+            }
+
+            function seleccionarIndex() {
+                var alcaldiaSelect = document.getElementById("menude1");
+                var coloniaSelect = document.getElementById("menude2");
+                var inputHidden = document.getElementById("productoSeleccionado");
+
+                var indexCategoria = alcaldiaSelect.selectedIndex;
+                var indexProducto = coloniaSelect.selectedIndex;
+
+                if (indexCategoria === 0 || indexProducto === 0) {
+                    inputHidden.value = "";
+                    return;
+                }
+
+                inputHidden.value = coloniaSelect.options[indexProducto].value;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="formularioPedido">
+            <h1>EDUSAN</h1>
+            <h2>PEDIDO</h2>
+            <form action="pedido.jsp" method="post" name="cuestionario" onsubmit="seleccionarIndex()">
+                <label>Usuario:</label>
+                <input type="text" name="usuario" class="texto">
+                <label>Contraseña:</label>
+                <input type="text" name="contrasena" class="texto">
+
+                <h3>Producto</h3>
+                <select id="menude1" onChange="actualizarProductos()" name="categoria" class="texto">
+                    <option value="" disabled selected>Elija una opción</option>
+                    <option value="Brincolines">Brincolines</option>
+                    <option value="Inflables">Inflables</option>
+                    <option value="Futbolitos">Futbolitos</option>
+                    <option value="Rockola">Rockola</option>
+                </select>
+
+                <select id="menude2" onChange="seleccionarIndex()" name="producto" class="comboCategoria">
+                    <option value="" disabled selected>Elija una opción</option>
+                </select>
+
+                <input type="hidden" name="IndexSelecionado" id="productoSeleccionado" value="" class="comboProducto">
+
+                <h3>Fecha</h3>
+                <div class="fechasyhoras">
+                    <div class="fechashorasizquierda">
+                        <label>Fecha de inicio:</label><br><br>
+                        <input type="date" name="fechaInicio" required><br><br>
+                        <label>Hora de inicio:</label><br><br>
+                        <input type="time" name="horaInicio" required><br><br>
+                    </div>
+                    <div class="fechashorasderecha">
+                        <label>Fecha de fin:</label><br><br>
+                        <input type="date" name="fechaFin" required><br><br>
+                        <label>Hora de fin:</label><br><br>
+                        <input type="time" name="horaFin" required><br><br>
+                    </div>
+                </div>
+
+                <input type="submit" name="enviar" value="Ordenar" class="enviar">
+            </form>
+            <a href="cambiodeContrasena.html">¿Olvidaste tu contraseña?</a>
+            <a href="indexJSP.jsp">Regresar</a>
+        </div>
+    </body>
+</html>

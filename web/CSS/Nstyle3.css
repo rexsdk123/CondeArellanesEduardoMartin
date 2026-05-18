@@ -1,0 +1,159 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+
+
+header {
+    background: #ffffff; /* blanco sólido sin degradado */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    border-bottom: 3px solid #99d6ff;
+    box-shadow: 0 2px 15px rgba(0, 120, 215, 0.1);
+    z-index: 1000;
+}
+
+/* Contenedor del logo/marca */
+.MARCA {
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.MARCA p {
+    margin: 0;
+    margin-left: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.MARCA p a {
+    text-decoration: none;
+    color: #0066cc;
+    transition: color 0.3s ease;
+}
+
+.MARCA p a:hover {
+    color: #004d99;
+}
+
+/* Navegación central - Enlaces principales */
+.LINKS {
+    height: 100%;
+    width: 55%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LINKS a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.LINKS a:hover {
+    background: rgba(0, 120, 215, 0.1);
+    color: #004d99;
+}
+
+.LINKS .a1 {
+    margin-left: 40px;
+}
+
+.LINKS .a2, .LINKS .a3, .LINKS .a4 {
+    margin-left: 30px;
+}
+
+/* Sección de usuario - Login y carrito */
+.SESION {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 25px;
+}
+
+.SESION a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.SESION a:hover {
+    background: rgba(0, 120, 215, 0.1);
+    color: #004d99;
+}
+
+.SESION .Carrito {
+    margin-left: 25px;
+    background: linear-gradient(135deg, #4da6ff, #0078d7);
+    color: white !important;
+}
+
+.SESION .Carrito:hover {
+    background: linear-gradient(135deg, #0078d7, #0066cc);
+    color: white !important;
+}
+
+nav, main, section, article, aside, footer {
+    border: 2px solid #99d6ff;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+nav {
+    background: rgba(179, 224, 255, 0.9);
+    text-align: center;
+    border: 1px solid #66c2ff;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #004d99;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+section {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+aside {
+    flex: 1;
+    background: rgba(230, 247, 255, 0.9);
+}

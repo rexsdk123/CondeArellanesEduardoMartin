@@ -1,0 +1,483 @@
+/* ==================================================================================== */
+/* RESET Y CONFIGURACIÓN BASE */
+/* ==================================================================================== */
+
+/**
+ * Reset de propiedades predeterminadas para consistencia cross-browser
+ * Elimina márgenes, paddings y bordes por defecto
+ */
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+
+/* ==================================================================================== */
+/* HEADER - NAVEGACIÓN PRINCIPAL */
+/* ==================================================================================== */
+
+/**
+ * Header principal con diseño flexible
+ * Contiene logo, navegación y elementos de usuario
+ */
+header {
+    background: #ffffff; /* blanco sólido sin degradado */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    border-bottom: 3px solid #99d6ff;
+    box-shadow: 0 2px 15px rgba(0, 120, 215, 0.1);
+    z-index: 1000;
+}
+
+/* Contenedor del logo/marca */
+.MARCA {
+    height: 100%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.MARCA p {
+    margin: 0;
+    margin-left: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.MARCA p a {
+    text-decoration: none;
+    color: #0066cc;
+    transition: color 0.3s ease;
+}
+
+.MARCA p a:hover {
+    color: #004d99;
+}
+
+/* Navegación central - Enlaces principales */
+.LINKS {
+    height: 100%;
+    width: 55%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LINKS a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.LINKS a:hover {
+    background: rgba(0, 120, 215, 0.1);
+    color: #004d99;
+}
+
+.LINKS .a1 {
+    margin-left: 40px;
+}
+
+.LINKS .a2, .LINKS .a3, .LINKS .a4 {
+    margin-left: 30px;
+}
+
+/* Sección de usuario - Login y carrito */
+.SESION {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 25px;
+}
+
+.SESION a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.SESION a:hover {
+    background: rgba(0, 120, 215, 0.1);
+    color: #004d99;
+}
+
+.SESION .Carrito {
+    margin-left: 25px;
+    background: linear-gradient(135deg, #4da6ff, #0078d7);
+    color: white !important;
+}
+
+.SESION .Carrito:hover {
+    background: linear-gradient(135deg, #0078d7, #0066cc);
+    color: white !important;
+}
+
+.PP {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 0;
+}
+
+/* Contenedor de imagen del producto */
+.imgPP {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.imgPP img {
+    border: 4px solid #99d6ff;
+    border-radius: 15px;
+    height: 600px;
+    width: 700px;
+    max-width: 90%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 120, 215, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.imgPP img:hover {
+    transform: scale(1.02);
+}
+
+/* Contenedor de información del producto */
+.infosPP {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TextoPP {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Línea separadora */
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #99d6ff, transparent);
+    margin: 20px 0;
+}
+
+/* Tipografía de la sección producto */
+.TituloPP {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.ValorPP, .ImpuestosPP, .InfoPP, .botonPP {
+    font-family: Arial, sans-serif;
+    margin-top: 12px;
+    font-size: 20px;
+    color: #333;
+}
+
+.DefPP, .PenaPP, .InfoExtraPP {
+    font-family: Arial, sans-serif;
+    color: #666;
+    line-height: 1.6;
+}
+
+.botonPP {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.botonPP a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 30px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #4da6ff, #0078d7);
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 120, 215, 0.3);
+}
+
+.botonPP a:hover {
+    background: linear-gradient(135deg, #0078d7, #0066cc);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 120, 215, 0.4);
+}
+
+
+/* ==================================================================================== */
+/* SECCIÓN MÁS ARTÍCULOS */
+/* ==================================================================================== */
+
+/**
+ * Grid de productos relacionados
+ * Diseño de 4 columnas responsivas
+ */
+.MasArticulos {
+    height: 100vh;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 0;
+}
+
+.TituloMA {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: transparent;
+}
+
+.TituloMA p {
+    color: #0066cc;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.Articulos {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.articulo1, .articulo2, .articulo3, .articulo4 {
+    height: 100%;
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0, 120, 215, 0.1);
+    border: 2px solid #e6f7ff;
+    transition: all 0.3s ease;
+}
+
+.articulo1:hover, .articulo2:hover, .articulo3:hover, .articulo4:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 120, 215, 0.2);
+    border-color: #99d6ff;
+}
+
+.articulo1 h1, .articulo2 h1, .articulo3 h1, .articulo4 h1 {
+    font-family: Arial, sans-serif;
+    color: #0066cc;
+    font-size: 22px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.articulo1 p, .articulo2 p, .articulo3 p, .articulo4 p {
+    width: 90%;
+    text-align: center;
+    color: #666;
+    line-height: 1.5;
+}
+
+.articulo1 img, .articulo2 img, .articulo3 img, .articulo4 img {
+    margin-bottom: 25px;
+    margin-top: 15px;
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border: 3px solid #99d6ff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.articulo1:hover img, .articulo2:hover img, .articulo3:hover img, .articulo4:hover img {
+    border-color: #4da6ff;
+    transform: scale(1.05);
+}
+
+
+/* ==================================================================================== */
+/* SECCIÓN CALL TO ACTION - EMPEZAR */
+/* ==================================================================================== */
+
+/**
+ * Sección de llamada a la acción
+ * Diseño centrado y persuasivo
+ */
+.Empezar {
+    height: 400px;
+    width: 100%;
+    background: linear-gradient(135deg, #4da6ff, #0078d7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.EmpezarArriba {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.EmpezarArriba p {
+    width: 60%;
+    font-size: 32px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.EmpezarArriba a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    padding: 18px 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.EmpezarArriba a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.CajasE {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CajasE img {
+    height: 80%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+}
+
+.CajasE img:hover {
+    border-color: white;
+    transform: scale(1.1);
+}
+
+
+/* ==================================================================================== */
+/* SECCIÓN INFORMACIÓN FINAL */
+/* ==================================================================================== */
+
+/**
+ * Sección final con texto e imagen
+ * Layout dividido 50/50
+ */
+.UltimaInfo {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.TextoU {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 5%;
+}
+
+.TextoU h1 {
+    font-family: Arial, sans-serif;
+    font-size: 42px;
+    color: #0066cc;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.TextoU p {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    text-align: justify;
+    color: #666;
+    width: 90%;
+    line-height: 1.7;
+}
+
+.ImgU {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.ImgU img {
+    height: auto;
+    width: 80%;
+    max-width: 500px;
+    border: 4px solid #99d6ff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 120, 215, 0.2);
+    transition: all 0.3s ease;
+}
+
+.ImgU img:hover {
+    transform: scale(1.03);
+    border-color: #4da6ff;
+}

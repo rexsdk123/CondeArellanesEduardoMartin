@@ -1,0 +1,116 @@
+body {
+            font-family: Verdana, Helvetica, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            background-color: #E6F0FA;
+            color: #2C3E50;
+        }
+
+        /* Estructura principal */
+        header, nav, main, footer, section, aside {
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #5DADE2;
+        }
+
+        header {
+            background-color: #2E86C1;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #AED6F1;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #1B4F72;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 2rem;
+            justify-content: center; /* Centramos el contenido */
+            background-color: transparent; /* Hacemos el main transparente */
+            border: none; /* Quitamos el borde del main para que no encapsule todo */
+        }
+
+        section {
+            flex: 2;
+            min-width: 300px; /* Ancho mínimo para la sección del formulario */
+            background-color: #EBF5FB;
+        }
+
+        aside {
+            flex: 1;
+            background-color: #D4E6F1;
+        }
+        
+        footer {
+			text-align: center;
+            background-color: #AED6F1; /* Color de fondo del nav original */
+            color: #1B4F72;           /* Color de texto del nav original */
+		}
+
+        /* Estilos específicos para el formulario de eliminación */
+        .delete-container {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .delete-container h2 {
+            margin-top: 0;
+            color: #2E86C1;
+            font-size: 1.8rem;
+        }
+        
+        .delete-container p {
+            margin-bottom: 2rem;
+            color: #2C3E50;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #1B4F72;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #5DADE2;
+            border-radius: 4px;
+            box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+            background-color: #fff;
+            color: #2C3E50;
+        }
+
+        .delete-button {
+            width: 100%;
+            padding: 0.9rem;
+            background-color: #d9534f; /* Rojo para destacar la acción destructiva */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .delete-button:hover {
+            background-color: #c9302c; /* Rojo más oscuro en hover */
+        }

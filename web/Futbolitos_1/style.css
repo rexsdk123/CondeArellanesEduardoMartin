@@ -1,0 +1,157 @@
+.carousel {
+    position: relative;
+    width: 550px;
+    height: 100%;
+    overflow: hidden;
+    border: 5px solid black;
+}
+
+.imagenesSeguimiento {
+    display: flex;
+    height: 100%;
+}
+
+.deslizador {
+    width: 550px;
+    height: 100%;
+}
+
+.deslizador img {
+    width: 100%;
+    height: 100%;
+}
+
+.imagenesbotonAnt {
+    position: absolute;
+    top: 50%;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 25px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+.imagenesbotonSig {
+    position: absolute;
+    top: 50%;
+    background-color: black;
+    color: white;
+    border: none;
+   font-size: 25px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.imagenesbotonAnt {
+    left: 0;
+}
+
+.imagenesbotonSig {
+    right: 0;
+}
+
+.PP{
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Centrar imagen del producto al lado izq de la secicón */
+.imgPP{
+    height: 650px;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Borde de la imagen del producto (no se modificó el tamaño de la imagen pero de ser necesario se hará en ésta misma sección) */
+.imgPP img{
+    height: 100%;
+    width: 550px;
+    border: 5px solid black;
+}
+
+
+
+.infosPP{
+    height: 100%;
+    width: 50%;
+
+
+    display: flex;
+    justify-content: center;
+}
+
+/* Centrar el texto, sin centrar el contenido */
+.TextoPP{
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+hr {
+    border: none;                    /* elimina el estilo por defecto */
+    height: 2px;                     /* grosor de la línea */
+    background-color: black;       /* color de la línea */
+    margin-top: 8px;                   /* espacio arriba y abajo */
+    margin-bottom: 0px;
+}
+
+
+/* Caracteristicas a cada parte del texto */
+.TituloPP{
+    font-family: abadi-mt;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.ValorPP, .ImpuestosPP, .InfoPP, .botonPP{
+    font-family: Arial, sans-serif;
+    margin-top: 5px;
+    font-size: large;
+}
+.DefPP, .PenaPP, .InfoExtraPP{
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+
+}
+.botonPP{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+/* Características del botón "AGREGAR AL CARRITO" */
+.botonPP a{
+    display: flex;
+    justify-content: center;
+
+    padding: 2%;
+    border-radius: 10px;
+    background-color: black;
+
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.5px;
+}
+/* hr's y felchitas para desplegar info */
+.DefPP, .PenaPP, .InfoExtraPP{
+    display: flex;
+    justify-content: space-between;
+}
+
+.link333{
+    margin-left: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.link333:hover{
+    text-decoration: underline;
+}

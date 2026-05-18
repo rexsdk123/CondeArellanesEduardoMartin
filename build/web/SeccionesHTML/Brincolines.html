@@ -1,0 +1,237 @@
+<html>
+    <head>
+        <title>MERCURY: Brincolines</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="img/inflable.png" type="image/x-icon">
+        <style>
+            header{
+                background-color: white;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+
+                top: 0;
+
+                height: 5vh;
+                width: 100%;
+            }
+            /* Izquierda,  donde va el nombre de la marca */
+            .MARCA{
+                height: 100%;
+                width: 10%;
+            }
+            .MARCA p{
+                margin-top: 5px;
+                margin-left: 10px;
+                font-size: 30px;
+                font-family: Arial;
+            }
+            .MARCA p a{
+                text-decoration: none;
+                color: black;
+            }
+            /* Medio, donde van los links a cada pagina de compra */
+            .LINKS{
+                height: 100%;
+                width: 60%;
+                font-size: 20px;
+
+                display: flex;
+                align-items: center;
+            }
+            .LINKS a{
+                text-decoration: none;
+                color: black;
+                font-family: Arial;
+
+            }
+            .LINKS .a1{
+                margin-left: 50px;
+            }
+            .LINKS .a2, .a3, .a4{
+                margin-left: 25px;
+            }
+            /* Derecha, donde va el inisio de sesion y el carrito */
+            .SESION{
+                height: 100%;
+                width: 30%;
+
+                display: flex;
+                margin-right: 10px;
+                align-content: right;
+            }
+            .SESION a{
+                text-decoration: none;
+                color: black;
+                font-family: Arial;
+                margin-left: 15px;
+                margin-right: 15px;
+                margin-top: 10px;
+
+            }
+            .SESION .Carrito{
+                margin-left: 30px;
+            }
+
+            .MasArticulos{
+                height: 100vh;
+                width: 100%;
+            }
+            /* Parte de arriba de la sección (solo con el texto)*/
+            .TituloMA{
+                height: 20vh;
+                width: 100%;
+
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+
+                background-color: white;
+
+            }
+            /* Asignación de características al texto de "mas articulos" */
+            .TituloMA p{
+                color: black;
+                font-size: 35px;
+                font-family: Arial;
+
+                margin-bottom: 40px;
+            }
+            /* Alineación de la parte inferior de la sección (acomodo de los 4 articulos) */
+            .Articulos{
+                height: 70vh;
+                width: 100%;
+
+                display: flex;
+            }
+            .articulo1, .articulo2, .articulo3, .articulo4{
+                height: 100%;
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+
+                justify-content: flex-start;
+                align-items: center;
+
+                color: black;
+                font-family: 'abadi-mt-extra-light';
+            }
+            .articulo1 h1, .articulo2 h1, .articulo3 h1, .articulo4 h1{
+                font-family: Arial;
+            }
+            .articulo1 p, .articulo2 p, .articulo3 p, .articulo4 p{
+                width: 70%;
+
+                text-align: center;
+            }
+            /* Distancia de la imagen al Nombre del producto */
+            /* Características (todas similares ya que deben ser casi iguales) de las imagenes de cada articulo */
+            .articulo1 img{
+                margin-bottom: 30px;
+                margin-top: 40px;
+                height: 250px;
+                border: 5px solid black;
+
+            }
+            .articulo2 img{
+                margin-bottom: 30px;
+                margin-top: 40px;
+                height: 250px;
+                border: 5px solid black;
+
+            }
+            .articulo3 img{
+                margin-bottom: 30px;
+                margin-top: 40px;
+                height: 250px;
+                border: 5px solid black;
+
+            }
+            .articulo4 img{
+                margin-bottom: 30px;
+                margin-top: 40px;
+                height: 250px;
+                border: 5px solid black;
+
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="MARCA">
+                <p><a href="index.html"><b>MERCURY</b></a></p>
+            </div>
+            <%
+            String usuario = (String) session.getAttribute("usuario");
+            %>
+            <div class="LINKS">
+                <a href="Brincolines.html" class="a1"><b>BRINCOLINES</b></a>
+                <a href="Inflables.html" class="a2"><b>INFLABLES</b></a>
+                <a href="Futbolitos.html" class="a3"><b>FUTBOLITOS</b></a>
+                <a href="Rockola.jsp" class="a4"><b>ROCKOLA</b></a>
+            </div>
+
+            <div class="SESION">
+                <%
+                if (usuario == null) {
+                %>
+                <a href="iniciarSesion.html">Iniciar Sesion</a>
+                <a href="pedidos.html" class="Carrito">Ordenar</a>
+                <a href="verPedidosAdministrador.html">Ver pedidos (Administrador)</a>
+                <a href="registros.html" class="Inicio">Registrarse</a>
+                <%
+                } else {
+                %>
+                <a href="carritoF.jsp">Carrito</a>
+                <a href="pedidos.html" class="Carrito">Ordenar</a>
+                <a href="verPedidosAdministrador.html">Ver pedidos (Administrador)</a>
+                <a href="registros.html" class="Inicio">Registrarse</a>
+                <%
+                }
+                %>
+            </div>
+        </header>
+
+        <section class="MasArticulos">
+            <div class="TituloMA">
+                <p>BRINCOLINES</p>
+            </div>
+
+            <div class="Articulos">
+
+                <div class="articulo1">
+                    <a href="Brincolines/brincolinChico.jsp">
+                        <img src="img/brincolinChico.jpeg" alt="">
+                    </a>
+                    <h1>BRINCOLIN CHICO</h1>
+                    <p>Un brincolin apto para los más peques de la familia</p>
+                </div>
+                <div class="articulo2">
+                    <a href="Brincolines/brincolinMediano.jsp">
+                        <img src="img/brincolinNormal2.jpeg" alt="">
+                    </a>
+                    <h1>BRINCOLIN MEDIANO</h1>
+                    <p>El clasico de clsicos, un brincolin de tamaño standar</p>
+                </div>
+                <div class="articulo3">
+                    <a href="Brincolines/brincolinGrande.jsp">
+                        <img src="img/brincolinNegro2.jpeg" alt="">
+                    </a>
+                    <h1>BRINCOLIN GRANDE</h1>
+                    <p>El brincolin perfecto para aquellos que necesitan más espacio para jugar</p>
+                </div>
+                <div class="articulo4">
+                    <a href="Brincolines/brincolinJumbo.jsp">
+                        <img src="img/brincolinGrande.jpeg" alt="">
+                    </a>
+                    <h1>BRINCOLIN JUMBO</h1>
+                    <p>Tamaño Jumbo con una diversión sin limites</p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

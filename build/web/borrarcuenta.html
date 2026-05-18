@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="CSS/estilos2.css" rel="stylesheet" type="text/css">
+    <title>Eliminar la cuenta</title>
+</head>
+<body>
+    <header>
+        <h1>Eliminar Cuenta</h1>
+    </header>
+
+    <nav>
+        <a href="indexJSP.jsp">Navegación</a>
+    </nav>
+
+    <main>
+        <section>
+            <div class="delete-container">
+                <h2>¿Estás seguro de que quieres continuar?</h2>
+                <p>
+                    Esta acción es definitiva y no se puede deshacer. Todos tus datos serán eliminados permanentemente.
+                    Para confirmar, por favor ingresa tu usuario y contraseña.
+                </p>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Escribe tu nombre de usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="Escribe tu contraseña" required>
+                    </div>
+                    <button type="submit" class="delete-button">Sí, eliminar mi cuenta</button>
+                </form>
+            </div>
+        </section>
+
+        <aside>
+            <h3>Consideraciones</h3>
+            <p>Al eliminar tu cuenta, perderás acceso a:</p>
+            <ul>
+                <li>Tu historial de compras.</li>
+                <li>Los artículos guardados.</li>
+                <li>Tus configuraciones de perfil.</li>
+            </ul>
+            <p>Si cambias de opinión, deberás crear una cuenta nueva.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Sitio Web | Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
