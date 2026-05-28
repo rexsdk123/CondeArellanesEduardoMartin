@@ -85,7 +85,6 @@ public class insertarDatosPedido {
 
             String sqlInsertaFecha = "INSERT INTO fecha (fecha_inicio, fecha_fin, hora_inicio, hora_fin) VALUES(?,?,?,?)";
 
-            // 🔥 AQUÍ YA INCLUIMOS id_pago
             String sqlInsertaRenta = "INSERT INTO renta (id_fecha, usuario, id_producto, id_pago) VALUES (?,?,?,?)";
 
             String Sid_fecha = "SELECT id_fecha FROM fecha WHERE fecha_inicio=? AND fecha_fin=? AND hora_inicio=? AND hora_fin=?";
@@ -100,31 +99,31 @@ public class insertarDatosPedido {
             PreparedStatement PSICliente = con.prepareStatement(Sid_cliente);
             PreparedStatement PSIProd = con.prepareStatement(Sid_producto);
 
-            // 🔹 CONVERSIONES
+      
             java.sql.Date sqlFechaInicio = java.sql.Date.valueOf(Datos.getFecha_inicio());
             java.sql.Date sqlFechaFin = java.sql.Date.valueOf(Datos.getFecha_fin());
 
             java.sql.Time sqlHoraInicio = java.sql.Time.valueOf(Datos.getHora_inicio());
             java.sql.Time sqlHoraFin = java.sql.Time.valueOf(Datos.getHora_fin());
 
-            // 🔹 INSERT FECHA
+       
             PIIFecha.setDate(1, sqlFechaInicio);
             PIIFecha.setDate(2, sqlFechaFin);
             PIIFecha.setTime(3, sqlHoraInicio);
             PIIFecha.setTime(4, sqlHoraFin);
             PIIFecha.executeUpdate();
 
-            // 🔹 OBTENER ID FECHA
+          
             PSIFecha.setDate(1, sqlFechaInicio);
             PSIFecha.setDate(2, sqlFechaFin);
             PSIFecha.setTime(3, sqlHoraInicio);
             PSIFecha.setTime(4, sqlHoraFin);
 
-            // 🔹 VALIDAR USUARIO
+           
             PSICliente.setString(1, usuario);
             PSICliente.setString(2, contrasena);
 
-            // 🔹 OBTENER PRODUCTO
+  
             PSIProd.setString(1, Datos.getProducto2());
 
             ResultSet rsFecha = PSIFecha.executeQuery();
@@ -136,10 +135,10 @@ public class insertarDatosPedido {
                 String idFecha = rsFecha.getString("id_fecha");
                 String idProducto = rsProducto.getString("id_producto");
 
-                // 🔥 DEBUG (opcional pero GOD)
+          
                 System.out.println("ID PAGO QUE LLEGA: " + Datos.getIdPago());
 
-                // 🔥 INSERT FINAL CON FK
+        
                 PIIRenta.setString(1, idFecha);
                 PIIRenta.setString(2, usuario);
                 PIIRenta.setString(3, idProducto);

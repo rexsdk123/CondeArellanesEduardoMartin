@@ -20,8 +20,8 @@
             verPedidos DP = new verPedidos();
             String eliminar = request.getParameter("eliminar");
             String usuarioEli=request.getParameter("usuarioEliminar");
-            int id = Integer.parseInt(request.getParameter("idEliminar"));
             ArrayList<insertarDatosGeneral> rentitas = DP.obtenerDatitos();
+            int id = Integer.parseInt(request.getParameter("idEliminar"));
             if (eliminar != null && id >= 0) {
                 boolean exito = DP.quitarRenta(id, rentitas, usuarioEli);
                 if (exito == true) {

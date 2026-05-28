@@ -71,8 +71,11 @@
                     <p>Hora fin: <%= datito.getHora_fin()%></p>
 
                     <!-- ELIMINAR (por índice) -->
-                    <form action="quitarPedido.jsp" method="post">
-                        <input type="hidden" name="index" value="<%= i%>">
+                    <form action="quitarRenta.jsp" method="post">
+                        <input type="hidden" name="idEliminar" value="<%= i%>">
+                        <input type="hidden" name="eliminar" value="true">
+                        <input type="hidden" name="usuarioEliminar" value="<%= usuario%>">
+
                         <input type="submit" value="Eliminar" class="enviar">
                     </form>
                 </article>
@@ -111,7 +114,7 @@
 
         <%
             } // cierre else login
-        %>
+%>
 
     </body>
 </html>

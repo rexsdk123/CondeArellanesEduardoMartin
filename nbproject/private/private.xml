@@ -2,6 +2,21 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/src/java/paquetito/insertarDatosGeneral.java</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/src/java/paquetito/insertarDatos.java</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/src/java/paquetito/conexionBase.java</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/web/carritoF.jsp</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/web/quitarPedido.jsp</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/web/quitarRenta.jsp</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/web/verPedidosAdministrador.html</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/web/verPedidosJSP.jsp</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/web/pedidos.html</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/web/pedidosMod.jsp</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/web/pedidoSw.jsp</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/web/pedido.jsp</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/src/java/paquetito/insertarDatosPedido.java</file>
+            <file>file:/F:/Stuff/PC_RESPALDO/Proyectitos/Java/PROYECTOFINAL2/src/java/paquetito/guardarDatos.java</file>
+        </group>
     </open-files>
 </project-private>
