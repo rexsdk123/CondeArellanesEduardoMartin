@@ -71,7 +71,7 @@
                     <p>Hora fin: <%= datito.getHora_fin()%></p>
 
                     <!-- ELIMINAR (por índice) -->
-                    <form action="quitarCarrito.jsp" method="post">
+                    <form action="quitarPedido.jsp" method="post">
                         <input type="hidden" name="index" value="<%= i%>">
                         <input type="submit" value="Eliminar" class="enviar">
                     </form>
