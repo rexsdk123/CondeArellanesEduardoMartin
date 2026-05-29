@@ -88,7 +88,11 @@
 
                             for (guardarDatosPedidos pedido : carrito) {
 
+                                System.out.println("ANTES: "+ pedido.getIdPago());
+                            
                                 pedido.setIdPago(idPago);
+                                
+                                System.out.println("DESPUES:"+ pedido.getIdPago());
 
                                 insertarDatosPedido.insertarPedidoActualizado(
                                         pedido,
