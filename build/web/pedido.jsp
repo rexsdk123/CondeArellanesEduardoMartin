@@ -1,96 +1,110 @@
-<%-- 
-    Document   : pedido
-    Created on : 22 abr 2025, 4:31:34 p.m.
-    Author     : gampl
---%>
-
-
-<%@page import="paquetito.guardarDatos"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="paquetito.guardarDatosPedidos"%>
-<%@page import="paquetito.insertarDatosPedido"%>
-<%@page import="paquetito.conexionBase"%>
-<%@page import="paquetito.insertarDatos"%>
 <%@page import="java.time.LocalDate"%>
 <%@page import="java.time.LocalTime"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="CSS/style.css">
         <link rel="shortcut icon" href="img/inflable.png" type="image/x-icon">
-        <meta http-equiv="refresh" content="1; url=indexJSP.jsp">
         <link rel="stylesheet" href="CSS/red.css">
         <title>MERCURY: Pedido</title>
     </head>
     <body>
-        <%
-            conexionBase con = new conexionBase();
-            insertarDatosPedido set = new insertarDatosPedido();
-            guardarDatosPedidos save = new guardarDatosPedidos();
 
-            String cadenita = request.getParameter("enviar");
+```
+    <%
+        guardarDatosPedidos save = new guardarDatosPedidos();
 
-            String usuarioVerificar = request.getParameter("usuario");
-            String contrasenaVerificar = request.getParameter("contrasena");
-            String Nombre_categoriaVer = request.getParameter("categoria");
-            String Producto2Verificar = request.getParameter("IndexSelecionado");
-            
-            System.out.println(usuarioVerificar);
-            System.out.println(contrasenaVerificar);
-            System.out.println(Nombre_categoriaVer);
-            System.out.println(Producto2Verificar);
+        String cadenita = request.getParameter("enviar");
 
-            try {
-                LocalDate fechaInicioVerificar = LocalDate.parse(request.getParameter("fechaInicio"));
-                LocalDate fechaFinVerificar = LocalDate.parse(request.getParameter("fechaFin"));
+        String usuarioVerificar = request.getParameter("usuario");
+        String contrasenaVerificar = request.getParameter("contrasena");
+        String nombreCategoriaVer = request.getParameter("categoria");
+        String productoVerificar = request.getParameter("IndexSelecionado");
 
-                LocalTime horaInicioVerificar = LocalTime.parse(request.getParameter("horaInicio"));
-                LocalTime horaFinVerificar = LocalTime.parse(request.getParameter("horaFin"));
-                if (usuarioVerificar == null || usuarioVerificar.trim().isEmpty()
-                        || contrasenaVerificar == null || contrasenaVerificar.trim().isEmpty()
-                        || Nombre_categoriaVer == null || Nombre_categoriaVer.trim().isEmpty()
-                        || Producto2Verificar == null || Producto2Verificar.trim().isEmpty()) {
-                    out.println("<script>alert('Ingrese los datitos')</script>");
-                } else {
-                    if (cadenita != null) {
-                        save.setUsuario(request.getParameter("usuario"));
-                        save.setContrasena(request.getParameter("contrasena"));
-                        
-                        save.setNombre_categoria(request.getParameter("categoria"));
-                        save.setProducto2(Producto2Verificar);
+        System.out.println(usuarioVerificar);
+        System.out.println(contrasenaVerificar);
+        System.out.println(nombreCategoriaVer);
+        System.out.println(productoVerificar);
 
-                        //Convertimos los String a los dias y horas correspondientes
-                        //En MySQL
-                        LocalDate fechaInicio = LocalDate.parse(request.getParameter("fechaInicio"));
-                        LocalDate fechaFin = LocalDate.parse(request.getParameter("fechaFin"));
+        try {
 
-                        save.setFecha_inicio(fechaInicio);
-                        save.setFecha_fin(fechaFin);
+            LocalDate.parse(request.getParameter("fechaInicio"));
+            LocalDate.parse(request.getParameter("fechaFin"));
 
-                        LocalTime horaInicio = LocalTime.parse(request.getParameter("horaInicio"));
-                        LocalTime horaFin = LocalTime.parse(request.getParameter("horaFin"));
+            LocalTime.parse(request.getParameter("horaInicio"));
+            LocalTime.parse(request.getParameter("horaFin"));
 
-                        save.setHora_inicio(horaInicio);
-                        save.setHora_fin(horaFin);
+            if (usuarioVerificar == null || usuarioVerificar.trim().isEmpty()
+                    || contrasenaVerificar == null || contrasenaVerificar.trim().isEmpty()
+                    || nombreCategoriaVer == null || nombreCategoriaVer.trim().isEmpty()
+                    || productoVerificar == null || productoVerificar.trim().isEmpty()) {
 
-                        boolean exito2=insertarDatosPedido.insertarPedidoActualizado(save, save.getUsuario(), save.getContrasena());
-                        
+                out.println("<script>alert('Ingrese los datos')</script>");
 
-                        if (exito2) {
-                            out.println("<script>alert('Renta registrada exitosamente')</script>");
-                        } else {
-                            out.println("<script>alert('Ingrese los datos correctamente')</script>");
-                        }
-                    } else {
-                        System.out.println("<script>alert('Pequeño bro hackeo el sistema')</script>");
+            } else {
+
+                if (cadenita != null) {
+
+                    save.setUsuario(usuarioVerificar);
+                    save.setContrasena(contrasenaVerificar);
+
+                    save.setNombre_categoria(nombreCategoriaVer);
+                    save.setProducto2(productoVerificar);
+
+                    LocalDate fechaInicio = LocalDate.parse(request.getParameter("fechaInicio"));
+                    LocalDate fechaFin = LocalDate.parse(request.getParameter("fechaFin"));
+
+                    save.setFecha_inicio(fechaInicio);
+                    save.setFecha_fin(fechaFin);
+
+                    LocalTime horaInicio = LocalTime.parse(request.getParameter("horaInicio"));
+                    LocalTime horaFin = LocalTime.parse(request.getParameter("horaFin"));
+
+                    save.setHora_inicio(horaInicio);
+                    save.setHora_fin(horaFin);
+
+                    ArrayList<guardarDatosPedidos> carrito
+                            = (ArrayList<guardarDatosPedidos>) session.getAttribute("carrito");
+
+                    if (carrito == null) {
+                        carrito = new ArrayList<guardarDatosPedidos>();
                     }
+
+                    carrito.add(save);
+
+                    session.setAttribute("carrito", carrito);
+
+                    session.setAttribute("usuario", usuarioVerificar);
+
+                    response.sendRedirect("pagarCuenta.jsp");
+                    session.setAttribute("origenPago", "pedido");
+                    return;
+
+                } else {
+
+                    out.println("<script>alert('Acceso no válido')</script>");
+
                 }
-            } catch (Exception error) {
-                out.println("<script>alert('Ingrese datos en los campos requeridos')</script>");
             }
 
-        %>
-        <p class="red">Redirigiendo...</p>
-    </body>
+        } catch (Exception error) {
+
+            System.out.println("Error: " + error);
+
+            out.println("<script>alert('Ingrese datos válidos en todos los campos')</script>");
+
+        }
+    %>
+
+    <p class="red">Redirigiendo...</p>
+
+</body>
+```
+
 </html>

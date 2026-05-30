@@ -55,6 +55,44 @@
 
                 inputHidden.value = coloniaSelect.options[indexProducto].value;
             }
+
+            function mostrarPrecio() {
+
+                var producto = document.getElementById("menude2").value;
+
+                var precio = 0;
+
+                if (producto === "Brincolin chico")
+                    precio = 400;
+                else if (producto === "Brincolin mediano")
+                    precio = 500;
+                else if (producto === "Brincolin grande")
+                    precio = 600;
+                else if (producto === "Brincolin jumbo")
+                    precio = 800;
+                else if (producto === "Inflable minion")
+                    precio = 800;
+                else if (producto === "Inflable spiderman")
+                    precio = 900;
+                else if (producto === "Inflable mario bros")
+                    precio = 600;
+                else if (producto === "Inflable batman")
+                    precio = 800;
+                else if (producto === "Inflable castillo")
+                    precio = 800;
+                else if (producto === "Futbolito grande cafe oscuro")
+                    precio = 700;
+                else if (producto === "Futbolito grande cafe")
+                    precio = 700;
+                else if (producto === "Futbolito chico")
+                    precio = 500;
+                else if (producto === "Rockola")
+                    precio = 800;
+
+                document.getElementById("precioProducto").innerHTML =
+                        "Precio: $" + precio;
+
+            }
         </script>
     </head>
     <body>
@@ -76,12 +114,14 @@
                     <option value="Rockola">Rockola</option>
                 </select>
 
-                <select id="menude2" onChange="seleccionarIndex()" name="producto" class="comboCategoria">
+                <select id="menude2" onChange="seleccionarIndex(); mostrarPrecio();" name="producto" class="comboCategoria">
                     <option value="" disabled selected>Elija una opción</option>
                 </select>
 
                 <input type="hidden" name="IndexSelecionado" id="productoSeleccionado" value="" class="comboProducto">
 
+                <h3 id="precioProducto">Precio: $0 MXN</h3>
+                
                 <h3>Fecha</h3>
                 <div class="fechasyhoras">
                     <div class="fechashorasizquierda">
@@ -98,7 +138,7 @@
                     </div>
                 </div>
 
-                <input type="submit" name="enviar" value="Ordenar" class="enviar">
+                <input type="submit" name="enviar" value="Continuar con el pago" class="enviar">
             </form>
             <a href="cambiodeContrasena.html">¿Olvidaste tu contraseña?</a>
             <a href="indexJSP.jsp">Regresar</a>

@@ -10,6 +10,18 @@
     String procesar = request.getParameter("procesar");
 %>
 
+<%
+    String origenPago = (String) session.getAttribute("origenPago");
+
+    String paginaRegreso;
+
+    if ("pedido".equals(origenPago)) {
+        paginaRegreso = "indexJSP.jsp";
+    } else {
+        paginaRegreso = "carritoF.jsp";
+    }
+%>
+
 <html>
     <head>
         <title>Pago</title>
@@ -33,7 +45,7 @@
                 </select><br>  
 
                 <input type="submit" value="Continuar" class="enviar"><br><br>
-                <a href="carritoF.jsp" class="regresar">Regresar</a>
+                <a href="<%=paginaRegreso%>" class="regresar">Regresar</a>
             </form>
 
             <%
@@ -59,7 +71,7 @@
                 <input type="text" name="cvv" class="texto"><br>
 
                 <input type="submit" value="Pagar" class="enviar"><br>
-                <br><a href="carritoF.jsp" class="regresar">Regresar</a>
+                <br><a href="<%=paginaRegreso%>" class="regresar">Regresar</a>
             </form>
 
             <%
@@ -73,7 +85,7 @@
                 String cvv = request.getParameter("cvv");
 
                 int idPago = realizarPago.insertarPago(usuario, metodo, num_tarjeta, nombre_tarjeta, fecha_exp, cvv);
-                
+
                 boolean exito = (idPago != -1);
             %>
 
@@ -88,11 +100,11 @@
 
                             for (guardarDatosPedidos pedido : carrito) {
 
-                                System.out.println("ANTES: "+ pedido.getIdPago());
-                            
+                                System.out.println("ANTES: " + pedido.getIdPago());
+
                                 pedido.setIdPago(idPago);
-                                
-                                System.out.println("DESPUES:"+ pedido.getIdPago());
+
+                                System.out.println("DESPUES:" + pedido.getIdPago());
 
                                 insertarDatosPedido.insertarPedidoActualizado(
                                         pedido,
@@ -102,6 +114,7 @@
                             }
 
                             session.removeAttribute("carrito");
+                            session.removeAttribute("origenPago");
                         }
                 %>
 
@@ -116,7 +129,7 @@
 
                 <br><br>
 
-                <a href="carritoF.jsp" class="regresar">Regresar</a>
+                <a href="<%=paginaRegreso%>" class="regresar">Regresar</a>
 
                 <%
                 } else {
@@ -158,6 +171,7 @@
                         }
 
                         session.removeAttribute("carrito");
+                        session.removeAttribute("origenPago");
                     }
             %>
 
@@ -171,8 +185,7 @@
 
             <br><br>
 
-            <a href="carritoF.jsp" class="regresar">Regresar</a>
-
+            <a href="<%=paginaRegreso%>" class="regresar">Regresar</a>
             <%
             } else {
             %>

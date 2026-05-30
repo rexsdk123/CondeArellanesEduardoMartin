@@ -1,159 +1,213 @@
-
-body {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    min-height: 100vh;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-
+body{
+font-family:'Segoe UI',sans-serif;
+background:#f5f9fc;
+color:#1e293b;
+min-height:100vh;
+}
 
 header {
-    background: #ffffff; /* blanco sólido sin degradado */
+    background: linear-gradient(135deg, #ffffff, #f0f9ff);
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
     position: sticky;
     top: 0;
-    height: 60px;
-    width: 100%;
     border-bottom: 3px solid #99d6ff;
     box-shadow: 0 2px 15px rgba(0, 120, 215, 0.1);
     z-index: 1000;
 }
 
-/* Contenedor del logo/marca */
 .MARCA {
-    height: 100%;
-    width: 15%;
+    width: 20%;
     display: flex;
     align-items: center;
 }
 
-.MARCA p {
-    margin: 0;
+.MARCA a {
     margin-left: 20px;
     font-size: 28px;
     font-weight: bold;
-}
-
-.MARCA p a {
     text-decoration: none;
     color: #0066cc;
-    transition: color 0.3s ease;
 }
 
-.MARCA p a:hover {
-    color: #004d99;
-}
-
-/* Navegación central - Enlaces principales */
 .LINKS {
-    height: 100%;
-    width: 55%;
-    font-size: 18px;
+    width: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 30px;
 }
 
 .LINKS a {
     text-decoration: none;
     color: #0066cc;
-    font-weight: 500;
     padding: 8px 16px;
     border-radius: 6px;
-    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .LINKS a:hover {
     background: rgba(0, 120, 215, 0.1);
-    color: #004d99;
 }
 
-.LINKS .a1 {
-    margin-left: 40px;
-}
-
-.LINKS .a2, .LINKS .a3, .LINKS .a4 {
-    margin-left: 30px;
-}
-
-/* Sección de usuario - Login y carrito */
 .SESION {
-    height: 100%;
     width: 30%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 25px;
+    gap: 15px;
+    padding-right: 20px;
 }
 
 .SESION a {
     text-decoration: none;
     color: #0066cc;
-    font-weight: 500;
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: 6px;
-    transition: all 0.3s ease;
-}
-
-.SESION a:hover {
-    background: rgba(0, 120, 215, 0.1);
-    color: #004d99;
 }
 
 .SESION .Carrito {
-    margin-left: 25px;
     background: linear-gradient(135deg, #4da6ff, #0078d7);
-    color: white !important;
+    color: white;
 }
 
 .SESION .Carrito:hover {
     background: linear-gradient(135deg, #0078d7, #0066cc);
-    color: white !important;
 }
 
-nav, main, section, article, aside, footer {
-    border: 2px solid #99d6ff;
-    margin: 10px;
-    padding: 15px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.85);
+nav{
+max-width:1400px;
+margin:35px auto;
+padding:0 20px;
+background:none;
+border:none;
 }
 
-nav {
-    background: rgba(179, 224, 255, 0.9);
-    text-align: center;
-    border: 1px solid #66c2ff;
+nav h2{
+font-size:42px;
+font-weight:800;
+color:#0f172a;
 }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #0066cc;
-    font-weight: bold;
+main{
+max-width:1400px;
+margin:auto;
+padding:0 20px 40px;
+display:grid;
+grid-template-columns:2fr 380px;
+gap:30px;
 }
 
-nav a:hover {
-    color: #004d99;
+section{
+display:flex;
+flex-direction:column;
+gap:20px;
 }
 
-main {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+article{
+background:white;
+border:none;
+border-radius:22px;
+padding:25px;
+box-shadow:0 8px 25px rgba(0,0,0,.05);
 }
 
-section {
-    flex: 2;
-    background: rgba(255, 255, 255, 0.9);
+article h3{
+color:#0078d7;
+margin-bottom:15px;
+font-size:24px;
 }
 
-aside {
-    flex: 1;
-    background: rgba(230, 247, 255, 0.9);
+article p{
+margin-bottom:8px;
+color:#475569;
+}
+
+aside{
+background:white;
+border:none;
+border-radius:24px;
+padding:30px;
+height:fit-content;
+position:sticky;
+top:100px;
+box-shadow:0 10px 35px rgba(0,0,0,.06);
+}
+
+aside h3{
+font-size:28px;
+margin-bottom:20px;
+color:#0f172a;
+}
+
+aside p{
+font-size:22px;
+font-weight:700;
+color:#0078d7;
+margin-bottom:25px;
+}
+
+input[type="submit"]{
+width:100%;
+border:none;
+border-radius:16px;
+background:#0078d7;
+color:white;
+font-size:17px;
+font-weight:700;
+padding:15px;
+cursor:pointer;
+margin-top:10px;
+}
+
+input[type="submit"]:hover
+
+input[type="submit"]:active
+
+article form input[type="submit"]{
+width:auto;
+padding:12px 20px;
+margin-top:15px;
+background:#ef4444;
+}
+
+article form input[type="submit"]:hover
+
+article h3:only-child{
+text-align:center;
+}
+
+@media(max-width:1000px){
+
+main{
+    grid-template-columns:1fr;
+}
+
+aside{
+    position:static;
+}
+
+header{
+    flex-direction:column;
+    height:auto;
+    padding:15px;
+}
+
+.LINKS,
+.SESION{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav h2{
+    font-size:30px;
+}
+
 }

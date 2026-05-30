@@ -61,6 +61,34 @@
                         for (int i = 0; i < carrito.size(); i++) {
 
                             guardarDatosPedidos datito = carrito.get(i);
+
+                            if (datito.getProducto2().equals("Brincolin chico")) {
+                                totalPagar += 400;
+                            } else if (datito.getProducto2().equals("Brincolin mediano")) {
+                                totalPagar += 500;
+                            } else if (datito.getProducto2().equals("Brincolin grande")) {
+                                totalPagar += 600;
+                            } else if (datito.getProducto2().equals("Brincolin jumbo")) {
+                                totalPagar += 800;
+                            } else if (datito.getProducto2().equals("Inflable minion")) {
+                                totalPagar += 800;
+                            } else if (datito.getProducto2().equals("Inflable spiderman")) {
+                                totalPagar += 900;
+                            } else if (datito.getProducto2().equals("Inflable mario bros")) {
+                                totalPagar += 600;
+                            } else if (datito.getProducto2().equals("Inflable batman")) {
+                                totalPagar += 800;
+                            } else if (datito.getProducto2().equals("Inflable castillo")) {
+                                totalPagar += 800;
+                            } else if (datito.getProducto2().equals("Futbolito grande cafe oscuro")) {
+                                totalPagar += 700;
+                            } else if (datito.getProducto2().equals("Futbolito grande cafe")) {
+                                totalPagar += 700;
+                            } else if (datito.getProducto2().equals("Futbolito chico")) {
+                                totalPagar += 500;
+                            } else if (datito.getProducto2().equals("Rockola")) {
+                                totalPagar += 800;
+                            }
                 %>
 
                 <article>
@@ -71,7 +99,7 @@
                     <p>Hora fin: <%= datito.getHora_fin()%></p>
 
                     <!-- ELIMINAR (por índice) -->
-                    <form action="quitarRenta.jsp" method="post">
+                    <form action="quitarProductoCarrito.jsp" method="post">
                         <input type="hidden" name="idEliminar" value="<%= i%>">
                         <input type="hidden" name="eliminar" value="true">
                         <input type="hidden" name="usuarioEliminar" value="<%= usuario%>">
@@ -98,10 +126,27 @@
             </section>
 
             <aside>
-                <h3>Total a pagar</h3>
-                <p>$<%= totalPagar%> + envío</p>
 
-                <form action="pagarCuenta.jsp" method="post">
+                <%
+                    boolean carritoVacio = (carrito == null || carrito.isEmpty());
+                %>
+
+                <%
+                    if (carritoVacio) {
+                %>
+                <h3>Total a Pagar:</h3>
+                <p>$0 MXN</p>
+                <%
+                } else {
+                %>
+                <h3>Total a Pagar:</h3>
+                <p>$<%= totalPagar%> MXN+ envío (Dependiendo la zona en donde se encuentre)</p>
+                <%
+                    }
+                %>
+
+
+                <form action="establecerOrigenCarrito.jsp" method="post">
                     <input type="submit" name="pagarCuenta" value="Pagar y Ordenar">
                 </form>
 
